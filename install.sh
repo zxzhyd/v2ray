@@ -1,7 +1,7 @@
 #!/bin/bash
 
-author=233boy
-# github=https://github.com/233boy/v2ray
+author=zxzhyd
+# github=https://github.com/zxzhyd/v2ray
 
 # bash fonts colors
 red='\e[31m'
@@ -127,7 +127,7 @@ show_help() {
     echo -e "Usage: $0 [-f xxx | -l | -p xxx | -v xxx | -h]"
     echo -e "  -f, --core-file <path>          自定义 $is_core_name 文件路径, e.g., -f /root/${is_core}-linux-64.zip"
     echo -e "  -l, --local-install             本地获取安装脚本, 使用当前目录"
-    echo -e "  -p, --proxy <addr>              使用代理下载, e.g., -p http://127.0.0.1:2333"
+    echo -e "  -p, --proxy <addr>              使用代理下载, e.g., -p http://127.0.0.1:52333"
     echo -e "  -v, --core-version <ver>        自定义 $is_core_name 版本, e.g., -v v5.4.1"
     echo -e "  -h, --help                      显示此帮助界面\n"
 
@@ -239,7 +239,7 @@ pass_args() {
     while [[ $# -gt 0 ]]; do
         case $1 in
         online)
-            err "如果想要安装旧版本, 请转到: https://github.com/233boy/v2ray/tree/old"
+            err "如果想要安装旧版本, 请转到: https://github.com/zxzhyd/v2ray/tree/old"
             ;;
         -f | --core-file)
             [[ -z $2 ]] && {
@@ -259,7 +259,7 @@ pass_args() {
             ;;
         -p | --proxy)
             [[ -z $2 ]] && {
-                err "($1) 缺少必需参数, 正确使用示例: [$1 http://127.0.0.1:2333 or -p socks5://127.0.0.1:2333]"
+                err "($1) 缺少必需参数, 正确使用示例: [$1 http://127.0.0.1:52333 or -p socks5://127.0.0.1:52333]"
             }
             proxy=$2
             shift 2
